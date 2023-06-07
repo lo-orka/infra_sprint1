@@ -10,7 +10,7 @@
 - **Kittygram** - https://ilovetasks.sytes.net
 - **Task** - https://kittythotocards.serveirc.com
 
-##Установка проекта:
+## Установка проекта:
 
 Клонируйте репрозторий и перейдите в него в командной строке:
 `git clone git@github.com:lo-orka/infra_sprint1.git`
