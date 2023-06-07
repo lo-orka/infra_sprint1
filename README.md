@@ -47,8 +47,11 @@
 `sudo nano /etc/systemd/system/gunicorn.service`
 
 > Путь к директории проекта:
+> 
 > /home/<имя-пользователя-в-системе>/
-> <директория-с-проектом>/<директория-с-файлом-manage.py>/.
+> 
+> <директория-с-проектом>/<директория-с-файлом-manage.py>/
+> 
 > Например:
 
 `WorkingDirectory=/home/yc-user/taski/backend/`
@@ -56,7 +59,9 @@
 2. В параметре ExecStart:
 
 > Команду, которую вы запускали руками, теперь будет запускать systemd:
+>
 > /home/<имя-пользователя-в-системе>/
+> 
 > <директория-с-проектом>/<путь-до-gunicorn-в-виртуальном-окружении> --bind 0.0.0.0:8000 backend.wsgi
 
 `ExecStart=/home/yc-user/taski/backend/venv/bin/gunicorn --bind 0.0.0.0:8000 backend.wsgi`
