@@ -1,4 +1,44 @@
 server {
+    server_name ilovetasks.sytes.net;
+
+    location /api/ {
+        proxy_pass http://127.0.0.1:8000;
+    }
+
+    location /admin/ {
+        proxy_pass http://127.0.0.1:8000;
+    }
+
+    location / {
+        root   /var/www/taski;
+        index  index.html index.htm;
+        try_files $uri /index.html;
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/ilovetasks.sytes.net/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/ilovetasks.sytes.net/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+    if ($host = ilovetasks.sytes.net) {
+        return 301 https://$host$request_uri;
+    }
+
+
+
+    listen 80;
+    server_name 84.252.140.61 ilovetasks.sytes.net;
+    return 404;
+
+
+}
+
+server {
     server_name kittythotocards.serveirc.com;
 
     location /api/ {
@@ -21,24 +61,23 @@ server {
 
 
     listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/ilovetasks.sytes.net/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/ilovetasks.sytes.net/privkey.pem; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/kittythotocards.serveirc.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/kittythotocards.serveirc.com/privkey.pem; # managed by Certbot
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 
 }
 
-
 server {
     if ($host = kittythotocards.serveirc.com) {
         return 301 https://$host$request_uri;
-    } # managed by Certbot
+    }
 
 
 
     listen 80;
-    server_name kittythotocards.serveirc.com;
-    return 404; # managed by Certbot
+    server_name 84.252.140.61 kittythotocards.serveirc.com;
+    return 404;
 
 
 }
