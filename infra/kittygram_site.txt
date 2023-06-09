@@ -1,5 +1,0 @@
-IP: 84.252.140.61;
-name_taski: https://ilovetasks.sytes.net;
-name_kittygram: https://kittythotocards.serveirc.com;
-login: yc-user;
-password: NRjeSf; 
