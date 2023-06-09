@@ -7,8 +7,8 @@
 - Пользователь может просматривать карточки других Пользователей.
 
 ### Прямые ссылки на проект:
-- **Kittygram** - https://ilovetasks.sytes.net
-- **Task** - https://kittythotocards.serveirc.com
+- **Kittygram** - https://kittythotocards.serveirc.com
+- **Task** - https://ilovetasks.sytes.net
 
 ## Установка проекта:
 
